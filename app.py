@@ -1,16 +1,11 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, render_template
 import io
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '''
-        <form method="post" action="/download">
-            <input type="text" name="text">
-            <input type="submit" value="Download">
-        </form>
-    '''
+    return render_template('index.html')
 
 @app.route('/download', methods=['POST'])
 def download():
