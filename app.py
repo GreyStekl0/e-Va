@@ -9,8 +9,9 @@ def index():
 
 @app.route('/download', methods=['POST'])
 def download():
-    text = request.form['text']
-    binary_data = text.encode('utf-8')
+    texts = request.form.getlist('text')
+    combined_text = '\n'.join(texts)
+    binary_data = combined_text.encode('utf-8')
     return send_file(
         io.BytesIO(binary_data),
         as_attachment=True,
