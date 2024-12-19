@@ -1,0 +1,51 @@
+.order {
+  padding-top: 88px;
+
+  .order__wrap {
+    display: flex;
+    justify-content: center;
+
+    .order__title {
+      text-align: right;
+    }
+
+    .order__form {
+      padding-left: 34px;
+
+      select, input {
+        color: #000;
+        background-color: $secondary;
+        border-radius: 10px;
+        border: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &::placeholder {
+          color: #000;
+        }
+      }
+
+      .order__form-design {
+        display: block; /* Make select element take full width */
+        width: 100%;
+        margin-bottom: 13px;
+      }
+
+      input {
+        display: inline-block; /* Keep input elements on the same line */
+        width: auto; /* Adjust width as needed */
+      }
+
+      p{
+        padding-top: 15px;
+      }
+      button{
+        margin-top: 31px;
+        margin-bottom: 9px;
+        padding: 12px 48px;
+        border-radius: 10px;
+        background-color: $primary;
+      }
+    }
+  }
+}

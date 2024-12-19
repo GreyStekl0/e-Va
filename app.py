@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/constructor')
+def constructor():
+    return render_template('constructor.html')
+
 @app.route('/download', methods=['POST'])
 def download():
     texts = request.form.getlist('text')

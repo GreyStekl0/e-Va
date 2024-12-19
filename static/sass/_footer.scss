@@ -1,0 +1,16 @@
+footer {
+  background-color: $secondary;
+  margin-top: 76px;
+
+  .footer__wrapp {
+    padding-top: 20px;
+    padding-bottom: 39px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+
+    img {
+      height: 51px;
+    }
+  }
+}

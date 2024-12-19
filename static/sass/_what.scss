@@ -1,0 +1,20 @@
+.what\? {
+  padding-top: 41px;
+
+  .what__wrapp {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      border-radius: 30px;
+    }
+    .what__wrapp-text{
+      padding-top: 38px;
+      padding-left: 24px;
+      .what__text{
+        padding-top: 20px;
+      }
+    }
+  }
+
+}

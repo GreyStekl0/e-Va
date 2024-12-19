@@ -2,85 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>eValentine</title>
-    <style>
-        body {
-            text-align: center;
-        }
-    </style>
-    <script>
-        function checkInput() {
-            const inputs = document.querySelectorAll('input[name="text"]');
-            const button = document.querySelector('input[type="submit"]');
-            button.disabled = Array.from(inputs).some(input => input.value.trim() === '');
-        }
-
-        function addInputField(value = '', removable = true) {
-            const form = document.querySelector('form');
-            const container = document.createElement('div');
-
-            const newInput = document.createElement('input');
-            newInput.type = 'text';
-            newInput.name = 'text';
-            newInput.value = value;
-            newInput.addEventListener('input', checkInput);
-
-            container.appendChild(newInput);
-
-            if (removable) {
-                const removeButton = document.createElement('button');
-                removeButton.type = 'button';
-                removeButton.textContent = '-';
-                removeButton.addEventListener('click', function() {
-                    form.removeChild(container);
-                    checkInput();
-                });
-                container.appendChild(removeButton);
-            }
-
-            form.insertBefore(container, form.querySelector('input[type="submit"]'));
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('input[name="text"]');
-            inputs.forEach(input => input.addEventListener('input', checkInput));
-            checkInput();
-        });
-    </script>
+    <title></title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Напиши сообщение для своей электронной валентинки</h1>
-    <div id="initial-buttons">
-        <button onclick="document.getElementById('file-upload').click()">Открыть файл</button>
-        <button onclick="createNewFile()">Создать новый</button>
-        <input type="file" id="file-upload" style="display: none;" accept=".bin" onchange="uploadFile(event)">
+<header>
+    <nav class="navigation">
+        <div class="container">
+            <div class="navigation__wrapp">
+                <img src="../static/image/logo.svg" alt="logo">
+                <ul class="navigation__list">
+                    <li class="navigation__list-item-act">
+                        <a href="#" class="navigation__list-link"> Открытка </a>
+                    </li>
+                    <li class="navigation__list-item">
+                        <a href="/constructor" class="navigation__list-link"> Конструктор </a>
+                    </li>
+                    <li class="navigation__list-item">
+                        <a href="#" class="navigation__list-link"> О нас </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="name">
+        <div class="container">
+            <div class="name__wrapp">
+                <p class="name__small">Подарите радость близким с нашими уникальными</p>
+                <h1 class="name__title">Электронными открытками!</h1>
+            </div>
+        </div>
+    </section>
+    <section class="what?">
+        <div class="container">
+            <div class="what__wrapp">
+                <img src="../static/image/postcard.png" alt="postcard">
+                <div class="what__wrapp-text">
+                    <h2 class="what__title">Что это такое?</h2>
+                    <p class="what__text">Электронная открытка – это стильный и современный способ поздравить близких с
+                        Днем святого
+                        Валентина или любым другим праздником.<br><br>
+                        Это компактный гаджет, на котором вы можете отобразить личное сообщение, настроить яркую
+                        подсветку и даже использовать как часы!<br><br>
+                        Она сочетает в себе оригинальность и практичность, делая поздравление запоминающимся и
+                        необычным.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="functions">
+        <div class="container">
+            <div class="functions__wrapp">
+                <h2 class="functions__title">Почему именно мы?</h2>
+                <div class="functions__cards ">
+                    <div class="row">
+                        <div class="col-3 d-none d-sm-block">
+                            <div class="functions__Card functions__cards-primary">
+                                <div class="functions__Card-img-wrap">
+                                    <img src="../static/image/messag.svg" alt="sun">
+                                </div>
+                                <div class="functions__Card-title">
+                                    <p>Личные поздравления</p>
+                                </div>
+                                <div class="functions__Card-text">
+                                    <p>Создайте уникальное сообщение</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 d-none d-sm-block">
+                            <div class="functions__Card functions__cards-secondary">
+                                <div class="functions__Card-img-wrap">
+                                    <img src="../static/image/sun.svg" alt="sun">
+                                </div>
+                                <div class="functions__Card-title">
+                                    <p>Яркая RGB-подсветка</p>
+                                </div>
+                                <div class="functions__Card-text">
+                                    <p>Настройте цвет подсветки под настроение</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 d-none d-sm-block">
+                            <div class="functions__Card functions__cards-primary">
+                                <div class="functions__Card-img-wrap">
+                                    <img src="../static/image/energy.svg" alt="sun">
+                                </div>
+                                <div class="functions__Card-title">
+                                    <p>Долгое время работы</p>
+                                </div>
+                                <div class="functions__Card-text">
+                                    <p>Встроенный аккумулятор обеспечивает длительную работу</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 d-none d-sm-block">
+                            <div class="functions__Card functions__cards-secondary">
+                                <div class="functions__Card-img-wrap">
+                                    <img src="../static/image/interface.svg" alt="sun">
+                                </div>
+                                <div class="functions__Card-title">
+                                    <p>Простой интерфейс</p>
+                                </div>
+                                <div class="functions__Card-text">
+                                    <p>Управление одной<br>кнопкой</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="order">
+        <div class="container">
+            <div class="order__wrap">
+                <h2 class="order__title">ЗАКАЖИТЕ ПРЯМО<br> СЕЙЧАС!</h2>
+                <div class="order__form">
+                    <form action="#">
+                        <select class="order__form-design" name="design" required>
+                            <option value="" disabled selected>Выбор дизайна</option>
+                            <option value="design1">Дизайн 1</option>
+                            <option value="design2">Дизайн 2</option>
+                        </select>
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="tel" name="phone" placeholder="+7(___)___-____" pattern="[0-9]{12}"
+                               maxlength="12"
+                               required>
+                        <input type="email" name="email" placeholder="Электронная почта" required>
+                        <p>Срок изготовления открытки составляет 2 недели.<br>Доставка осуществляется курьерской службой
+                            CDEK.</p>
+                        <button type="submit">Оформить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<footer>
+    <div class="container">
+        <div class="footer__wrapp">
+                <img src="../static/image/name.svg" alt="name">
+                <p>Hedgehogs © 2023</p>
+        </div>
     </div>
-    <div id="form-container" style="display: none;">
-        <form method="post" action="/download">
-            <input type="submit" value="Сохранить">
-            <button type="button" onclick="addInputField()">+</button>
-        </form>
-    </div>
-    <script>
-        function createNewFile() {
-            document.getElementById('form-container').style.display = 'block';
-            document.getElementById('initial-buttons').style.display = 'none';
-            addInputField('', false);
-        }
-
-        function uploadFile(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const lines = e.target.result.split('\n');
-                    document.getElementById('form-container').style.display = 'block';
-                    document.getElementById('initial-buttons').style.display = 'none';
-                    lines.forEach(line => addInputField(line));
-                };
-                reader.readAsText(file);
-            }
-        }
-    </script>
+</footer>
 </body>
 </html>

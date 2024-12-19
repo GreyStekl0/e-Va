@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eValentine</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function checkInput() {
+            const inputs = document.querySelectorAll('input[name="text"]');
+            const button = document.querySelector('input[type="submit"]');
+            button.disabled = Array.from(inputs).some(input => input.value.trim() === '');
+        }
+
+        function addInputField(value = '', removable = true) {
+            const form = document.querySelector('form');
+            const container = document.createElement('div');
+
+            const newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'text';
+            newInput.value = value;
+            newInput.addEventListener('input', checkInput);
+
+            container.appendChild(newInput);
+
+            if (removable) {
+                const removeButton = document.createElement('button');
+                removeButton.type = 'button';
+                removeButton.textContent = '-';
+                removeButton.addEventListener('click', function() {
+                    form.removeChild(container);
+                    checkInput();
+                });
+                container.appendChild(removeButton);
+            }
+
+            form.insertBefore(container, form.querySelector('input[type="submit"]'));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input[name="text"]');
+            inputs.forEach(input => input.addEventListener('input', checkInput));
+            checkInput();
+        });
+    </script>
+</head>
+<body>
+    <h1>Напиши сообщение для своей электронной валентинки</h1>
+    <div id="initial-buttons">
+        <button onclick="document.getElementById('file-upload').click()">Открыть файл</button>
+        <button onclick="createNewFile()">Создать новый</button>
+        <input type="file" id="file-upload" style="display: none;" accept=".bin" onchange="uploadFile(event)">
+    </div>
+    <div id="form-container" style="display: none;">
+        <form method="post" action="/download">
+            <input type="submit" value="Сохранить">
+            <button type="button" onclick="addInputField()">+</button>
+        </form>
+    </div>
+    <script>
+        function createNewFile() {
+            document.getElementById('form-container').style.display = 'block';
+            document.getElementById('initial-buttons').style.display = 'none';
+            addInputField('', false);
+        }
+
+        function uploadFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const lines = e.target.result.split('\n');
+                    document.getElementById('form-container').style.display = 'block';
+                    document.getElementById('initial-buttons').style.display = 'none';
+                    lines.forEach(line => addInputField(line));
+                };
+                reader.readAsText(file);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+}
+
+.navigation {
+  padding-top: 38px;
+
+  .navigation__wrapp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 118px;
+    }
+
+    .navigation__list {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 59px;
+
+      .navigation__list-item-act {
+        background-color: $primary;
+        padding: 7px 32px;
+        border-radius: 16px;
+      }
+    }
+  }
+}

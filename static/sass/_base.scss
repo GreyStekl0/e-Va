@@ -1,0 +1,70 @@
+/* обнуление стилей*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,p,pre,h1,h2,h3,h4,h5,ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+}
+/* обнуление стилей закончено*/
+/* настройка основных стилей */
+
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  line-height: 1.32;
+  color: $text;
+  @media screen and (max-width: $xxl) {
+    font-size: 16px;
+  }
+
+}
+pre {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  white-space: pre-line;
+}
+
+h1 {
+  font-size: 50px;
+  //line-height: 120%;
+  font-weight: 700;
+  @media screen and (max-width: $xxl) {
+    font-size: 36px;
+  }
+  @media screen and (max-width: $sm) {
+    font-size: 27px;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  @media screen and (max-width: $xxl) {
+    font-size: 28px;
+  }
+}
+
+img{
+  max-width: 100%;
+}
+/* настройка основных стилей закончена */
