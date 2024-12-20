@@ -13,7 +13,8 @@
         <div class="container">
             <div class="navigation__wrapp">
                 <img src="../static/image/logo.svg" alt="logo">
-                <ul class="navigation__list">
+                <img src="../static/image/hamburger.svg" alt="hamburger" class="hamburger" id="hamburger">
+                <ul class="navigation__list" id="navigation-list">
                     <li class="navigation__list-item-act">
                         <a href="#" class="navigation__list-link"> Открытка </a>
                     </li>
@@ -24,6 +25,24 @@
                         <a href="/about_us" class="navigation__list-link"> О нас </a>
                     </li>
                 </ul>
+            </div>
+            <div class="sidebar" id="sidebar">
+                <img src="../static/image/escape.svg" alt="close" class="close-btn" id="close-btn">
+                <ul class="sidebar__list">
+                    <li class="sidebar__list-item-act">
+                        <a href="/" class="sidebar__list-link"> Открытка </a>
+                    </li>
+                    <li class="sidebar__list-item">
+                        <a href="/constructor" class="sidebar__list-link"> Конструктор </a>
+                    </li>
+                    <li class="sidebar__list-item">
+                        <a href="/about_us" class="sidebar__list-link"> О нас </a>
+                    </li>
+                </ul>
+                <div class="sidebar__footer">
+                    <img src="../static/image/name.svg" alt="name">
+                    <p>Hedgehogs © 2023</p>
+                </div>
             </div>
         </div>
     </nav>
@@ -152,5 +171,20 @@
         </div>
     </div>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        hamburger.addEventListener('click', function () {
+            sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+        });
+
+        closeBtn.addEventListener('click', function () {
+            sidebar.style.display = 'none';
+        });
+    });
+</script>
 </body>
 </html>

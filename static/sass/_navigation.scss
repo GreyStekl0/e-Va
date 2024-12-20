@@ -10,8 +10,18 @@ nav {
     justify-content: space-between;
     align-items: center;
 
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+
     img {
-      width: 118px;
+      width: 90px;
     }
 
     .navigation__list {
@@ -21,10 +31,7 @@ nav {
       align-items: center;
       gap: 59px;
       @media screen and (max-width: $sm) {
-        .navigation__list {
-          display: none;
-          flex-direction: column;
-        }
+        display: none;
       }
 
       .navigation__list-item-act {
@@ -32,24 +39,60 @@ nav {
         padding: 7px 32px;
         border-radius: 16px;
       }
+    }
+  }
 
-      .burger-menu {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        @media screen and (max-width: $sm) {
-          .burger-menu {
-            display: flex;
-          }
-        }
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background-color: $background;
+    padding: 20px;
+    &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: rgba($primary, 0.5);
+    z-index: -1; // Ensure it is behind the sidebar content
+}
 
-        span {
-          height: 3px;
-          width: 25px;
-          background-color: $text;
-          margin: 4px 0;
-        }
+    .close-btn {
+      cursor: pointer;
+      width: 32px; // Adjust the size as needed
+      height: 32px; // Adjust the size as needed
+      position: absolute;
+      top: 50px;
+      right: 12px;
+    }
+
+    .sidebar__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center; // Center horizontally
+      padding-top: 156px;
+      gap: 30px;
+
+      .sidebar__list-item-act {
+        background-color: $primary;
+        padding: 7px 32px;
+        border-radius: 16px;
       }
     }
+    .sidebar__footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      gap: 18px;
+      img{
+        width: 90px;
+      }
+    }
+
   }
 }
