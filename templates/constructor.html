@@ -3,84 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <title>eValentine</title>
-    <style>
-        body {
-            text-align: center;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style_constructor.css">
     <script>
         function checkInput() {
             const inputs = document.querySelectorAll('input[name="text"]');
             const button = document.querySelector('input[type="submit"]');
-            button.disabled = Array.from(inputs).some(input => input.value.trim() === '');
+            button.disabled = inputs.length === 0 || Array.from(inputs).some(input => input.value.trim() === '');
+        }
+
+
+        function checkAddButtonVisibility() {
+            const form = document.querySelector('form');
+            const inputFields = form.querySelectorAll('input[name="text"]');
+            const addButtonContainer = document.querySelector('.add-button-container');
+
+            if (inputFields.length >= 10) {
+                addButtonContainer.style.display = 'none';
+            } else {
+                addButtonContainer.style.display = 'flex';
+            }
         }
 
         function addInputField(value = '', removable = true) {
             const form = document.querySelector('form');
+            const inputFields = form.querySelectorAll('input[name="text"]');
+
+            if (inputFields.length >= 10) {
+                return;
+            }
+
             const container = document.createElement('div');
+            container.classList.add('input-container');
 
             const newInput = document.createElement('input');
             newInput.type = 'text';
             newInput.name = 'text';
             newInput.value = value;
+            newInput.maxLength = 40; // Set the maximum length to 40 characters
             newInput.addEventListener('input', checkInput);
 
             container.appendChild(newInput);
 
             if (removable) {
-                const removeButton = document.createElement('button');
-                removeButton.type = 'button';
-                removeButton.textContent = '-';
-                removeButton.addEventListener('click', function() {
+                const removeImg = document.createElement('img');
+                removeImg.src = '/static/image/remove.svg'; // Path to your remove image
+                removeImg.alt = 'Remove';
+                removeImg.classList.add('remove-img');
+                removeImg.addEventListener('click', function () {
                     form.removeChild(container);
                     checkInput();
+                    checkAddButtonVisibility();
                 });
-                container.appendChild(removeButton);
+                container.appendChild(removeImg);
             }
 
-            form.insertBefore(container, form.querySelector('input[type="submit"]'));
+            const addButtonContainer = document.querySelector('.add-button-container');
+            form.insertBefore(container, addButtonContainer);
+
+            checkAddButtonVisibility();
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('input[name="text"]');
-            inputs.forEach(input => input.addEventListener('input', checkInput));
-            checkInput();
-        });
-    </script>
-</head>
-<body>
-    <h1>Напиши сообщение для своей электронной валентинки</h1>
-    <div id="initial-buttons">
-        <button onclick="document.getElementById('file-upload').click()">Открыть файл</button>
-        <button onclick="createNewFile()">Создать новый</button>
-        <input type="file" id="file-upload" style="display: none;" accept=".bin" onchange="uploadFile(event)">
-    </div>
-    <div id="form-container" style="display: none;">
-        <form method="post" action="/download">
-            <input type="submit" value="Сохранить">
-            <button type="button" onclick="addInputField()">+</button>
-        </form>
-    </div>
-    <script>
-        function createNewFile() {
-            document.getElementById('form-container').style.display = 'block';
-            document.getElementById('initial-buttons').style.display = 'none';
-            addInputField('', false);
+
+        function addAddButton() {
+            const form = document.querySelector('form');
+            const addButtonContainer = document.createElement('div');
+            addButtonContainer.classList.add('add-button-container');
+
+            const addImg = document.createElement('img');
+            addImg.src = '/static/image/add.svg'; // Path to your add image
+            addImg.alt = 'Add';
+            addImg.classList.add('add-img');
+            addImg.addEventListener('click', function () {
+                addInputField();
+            });
+
+            addButtonContainer.appendChild(addImg);
+            form.appendChild(addButtonContainer);
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            addAddButton();
+            checkAddButtonVisibility();
+            checkInput(); // Initial check to disable the button if all fields are empty
+        });
 
         function uploadFile(event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     const lines = e.target.result.split('\n');
-                    document.getElementById('form-container').style.display = 'block';
-                    document.getElementById('initial-buttons').style.display = 'none';
                     lines.forEach(line => addInputField(line));
                 };
                 reader.readAsText(file);
             }
         }
     </script>
+</head>
+<body>
+<header>
+    <nav class="navigation">
+        <div class="container">
+            <div class="navigation__wrapp">
+                <img src="/static/image/logo.svg" alt="logo">
+                <ul class="navigation__list">
+                    <li class="navigation__list-item">
+                        <a href="/" class="navigation__list-link"> Открытка </a>
+                    </li>
+                    <li class="navigation__list-item-act">
+                        <a href="/constructor" class="navigation__list-link"> Конструктор </a>
+                    </li>
+                    <li class="navigation__list-item">
+                        <a href="/about_us" class="navigation__list-link"> О нас </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="order">
+        <div class="container">
+            <div class="row">
+                <div class="offset-2 col-8 offset-2">
+                    <div class="order__wrapp">
+                        <h1 class="order__title">СОЗДАЙ СВОИ ПОСЛАНИЯ!</h1>
+                        <div class="constructor-container">
+                            <div id="form-container">
+                                <form id="message-form" method="post" action="/download">
+
+                                </form>
+                            </div>
+                        </div>
+                        <div id="button-container">
+                            <div class="button-wrapper">
+                                <input type="submit" value="Сохранить" form="message-form">
+                                <button type="button" onclick="document.getElementById('file-upload').click()">
+                                    Загрузить
+                                </button>
+                                <input type="file" id="file-upload" style="display: none;" accept=".bin"
+                                       onchange="uploadFile(event)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer__wrapp">
+            <img src="../static/image/name.svg" alt="name">
+            <p>Hedgehogs © 2023</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

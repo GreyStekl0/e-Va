@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-body,p,pre,h1,h2,h3,h4,h5,ul {
+body, p, pre, h1, h2, h3, h4, h5, ul {
   margin: 0;
 }
 
@@ -13,6 +13,7 @@ ul {
   list-style: none;
   padding: 0;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -22,6 +23,7 @@ button {
   border: none;
   background: none;
 }
+
 /* обнуление стилей закончено*/
 /* настройка основных стилей */
 
@@ -30,12 +32,24 @@ body {
   font-family: OpenRunde, serif;
   font-size: 20px;
   line-height: 1.32;
+  font-weight: 400;
   color: $text;
   @media screen and (max-width: $xxl) {
     font-size: 16px;
   }
-
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 pre {
   font-family: inherit;
   font-size: inherit;
@@ -53,7 +67,7 @@ h1 {
     font-size: 36px;
   }
   @media screen and (max-width: $sm) {
-    font-size: 27px;
+    font-size: 30px;
   }
 }
 
@@ -61,12 +75,22 @@ h2 {
   font-weight: 700;
   font-size: 36px;
   font-family: Aqum, sans-serif;
-  @media screen and (max-width: $xxl) {
-    font-size: 28px;
+  @media screen and (max-width: $sm) {
+    font-size: 25px;
   }
 }
 
-img{
+h3 {
+  font-family: OpenRunde, serif;
+  font-weight: 600;
+  font-size: 20px;
+  @media screen and (max-width: $sm) {
+    font-size: 16px;
+  }
+}
+
+img {
   max-width: 100%;
 }
+
 /* настройка основных стилей закончена */

@@ -1,0 +1,71 @@
+@import "vendor.scss";
+@import "sass/font";
+@import "sass/variables";
+@import "sass/base";
+@import "sass/navigation_constructor";
+@import "sass/order_constructor";
+@import "sass/footer";
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.constructor-container {
+  background-color: $secondary;
+  margin-top: 35px;
+  padding: 30px 24px;
+  border-radius: 20px;
+}
+
+.remove-img {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 47px; /* Adjust size as needed */
+  height: 45px; /* Adjust size as needed */
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-img {
+  cursor: pointer;
+  width: 47px; /* Adjust size as needed */
+  height: 45px; /* Adjust size as needed */
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.button-wrapper input[type="submit"],
+.button-wrapper button {
+  background-color: $primary;
+  color: $text;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-wrapper input[type="submit"]:disabled,
+.button-wrapper button:disabled {
+  background-color: $secondary;
+  cursor: not-allowed;
+}

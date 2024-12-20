@@ -4,6 +4,8 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import "../node_modules/swiper/swiper.min.css";
+@import "../node_modules/swiper/modules/pagination.min.css";
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11852,6 +11854,22 @@ textarea.form-control-lg {
 @font-face {
   font-family: "OpenRunde";
   src: url("/static/fonts/OpenRunde-Regular.woff2") format("woff2"), url("/static/fonts/OpenRunde-Regular.woff") format("woff");
+  font-weight: 400; /* Regular weight */
+}
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/static/fonts/OpenRunde-Bold.woff2") format("woff2"), url("/static/fonts/OpenRunde-Bold.woff") format("woff");
+  font-weight: 700; /* Bold weight */
+}
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/static/fonts/OpenRunde-Medium.woff2") format("woff2"), url("/static/fonts/OpenRunde-Medium.woff") format("woff");
+  font-weight: 500; /* Medium weight */
+}
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/static/fonts/OpenRunde-Semibold.woff2") format("woff2"), url("/static/fonts/OpenRunde-Semibold.woff") format("woff");
+  font-weight: 600; /* Semibold weight */
 }
 .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
   --bs-gutter-x: 1.875rem;
@@ -11918,12 +11936,24 @@ body {
   font-family: OpenRunde, serif;
   font-size: 20px;
   line-height: 1.32;
+  font-weight: 400;
   color: #000;
 }
 @media screen and (max-width: 1440px) {
   body {
     font-size: 16px;
   }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 pre {
@@ -11946,7 +11976,7 @@ h1, .h1 {
 }
 @media screen and (max-width: 576px) {
   h1, .h1 {
-    font-size: 27px;
+    font-size: 30px;
   }
 }
 
@@ -11955,9 +11985,20 @@ h2, .h2 {
   font-size: 36px;
   font-family: Aqum, sans-serif;
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 576px) {
   h2, .h2 {
-    font-size: 28px;
+    font-size: 25px;
+  }
+}
+
+h3, .h3 {
+  font-family: OpenRunde, serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+@media screen and (max-width: 576px) {
+  h3, .h3 {
+    font-size: 16px;
   }
 }
 
@@ -11983,18 +12024,41 @@ nav {
 }
 .navigation .navigation__wrapp .navigation__list {
   font-size: 16px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 59px;
+}
+@media screen and (max-width: 576px) {
+  .navigation .navigation__wrapp .navigation__list .navigation__list {
+    display: none;
+    flex-direction: column;
+  }
 }
 .navigation .navigation__wrapp .navigation__list .navigation__list-item-act {
   background-color: #EE7C9E;
   padding: 7px 32px;
   border-radius: 16px;
 }
+.navigation .navigation__wrapp .navigation__list .burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+@media screen and (max-width: 576px) {
+  .navigation .navigation__wrapp .navigation__list .burger-menu .burger-menu {
+    display: flex;
+  }
+}
+.navigation .navigation__wrapp .navigation__list .burger-menu span {
+  height: 3px;
+  width: 25px;
+  background-color: #000;
+  margin: 4px 0;
+}
 
 .name {
-  padding-top: 25px;
+  padding-top: 45px;
   margin: 36px 0;
 }
 .name .name__title {
@@ -12002,11 +12066,21 @@ nav {
 }
 
 .what\? {
-  padding-top: 41px;
+  padding-top: 45px;
+}
+@media screen and (max-width: 576px) {
+  .what\? {
+    padding-top: 40px;
+  }
 }
 .what\? .what__wrapp {
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 576px) {
+  .what\? .what__wrapp {
+    flex-direction: column;
+  }
 }
 .what\? .what__wrapp img {
   border-radius: 30px;
@@ -12020,7 +12094,7 @@ nav {
 }
 
 .functions {
-  padding-top: 89px;
+  padding-top: 100px;
 }
 .functions .functions__title {
   display: flex;
@@ -12051,6 +12125,7 @@ nav {
 .functions .functions__cards .functions__Card .functions__Card-title {
   padding-top: 26px;
   text-align: center;
+  font-weight: 600;
 }
 .functions .functions__cards .functions__Card .functions__Card-text {
   padding-top: 12px;
@@ -12058,7 +12133,7 @@ nav {
 }
 
 .order {
-  padding-top: 88px;
+  padding-top: 115px;
 }
 .order .order__wrap {
   display: flex;
@@ -12103,7 +12178,7 @@ nav {
 
 footer {
   background-color: #EDC2C9;
-  margin-top: 76px;
+  margin-top: 100px;
 }
 footer .footer__wrapp {
   padding-top: 20px;
@@ -12113,7 +12188,7 @@ footer .footer__wrapp {
   align-items: center; /* Center items vertically */
 }
 footer .footer__wrapp img {
-  height: 51px;
+  height: 39px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,6 +11,10 @@ def index():
 def constructor():
     return render_template('constructor.html')
 
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')
+
 @app.route('/download', methods=['POST'])
 def download():
     texts = request.form.getlist('text')

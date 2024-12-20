@@ -1,0 +1,24 @@
+.team {
+  background-color: $secondary;
+
+  .team__title {
+    padding-top: 49px;
+  }
+
+  .team__wrapp {
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+
+    .team__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 49px;
+
+      .team__item-text{
+        padding-left: 10px;
+      }
+    }
+  }
+}

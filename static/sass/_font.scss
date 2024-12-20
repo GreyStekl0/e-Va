@@ -12,4 +12,25 @@
   font-family: 'OpenRunde';
   src: url('/static/fonts/OpenRunde-Regular.woff2') format('woff2'),
   url('/static/fonts/OpenRunde-Regular.woff') format('woff');
+  font-weight: 400; /* Regular weight */
+}
+@font-face {
+  font-family: 'OpenRunde';
+  src: url('/static/fonts/OpenRunde-Bold.woff2') format('woff2'),
+  url('/static/fonts/OpenRunde-Bold.woff') format('woff');
+    font-weight: 700; /* Bold weight */
+}
+
+@font-face {
+  font-family: 'OpenRunde';
+  src: url('/static/fonts/OpenRunde-Medium.woff2') format('woff2'),
+  url('/static/fonts/OpenRunde-Medium.woff') format('woff');
+    font-weight: 500; /* Medium weight */
+}
+
+@font-face {
+  font-family: 'OpenRunde';
+  src: url('/static/fonts/OpenRunde-Semibold.woff2') format('woff2'),
+  url('/static/fonts/OpenRunde-Semibold.woff') format('woff');
+    font-weight: 600; /* Semibold weight */
 }

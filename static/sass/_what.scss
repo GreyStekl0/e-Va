@@ -1,17 +1,25 @@
 .what\? {
-  padding-top: 41px;
+  padding-top: 45px;
+  @media screen and (max-width: $sm) {
+      padding-top: 40px;
+    }
 
   .what__wrapp {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+    }
 
     img {
       border-radius: 30px;
     }
-    .what__wrapp-text{
+
+    .what__wrapp-text {
       padding-top: 38px;
       padding-left: 24px;
-      .what__text{
+
+      .what__text {
         padding-top: 20px;
       }
     }

@@ -1,0 +1,48 @@
+.provide {
+  padding-top: 72px;
+
+  .provide__title{
+    display: flex;
+    justify-content: center;
+  }
+
+  .provide__blocks {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 39px;
+
+    .provide__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 320px;
+      width: 282px;
+      border-radius: 20px;
+      box-shadow: 0 10px 50px $secondary;
+
+      img{
+        padding-top: 62px;
+      }
+
+      .provide__text{
+        padding-top: 33px;
+        text-align: center;
+      }
+    }
+  }
+
+  .provide__projects{
+    padding-top: 100px;
+    text-align: center;
+
+    .provide__projects-block{
+      background-color: $primary;
+      margin: 32px 0;
+      padding: 37px 0;
+      border-radius: 20px;
+      h3{
+        padding-top: 8px;
+      }
+    }
+  }
+}
