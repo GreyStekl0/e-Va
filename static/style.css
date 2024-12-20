@@ -11844,6 +11844,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Aqum";
+  src: url("/static/fonts/aqum.ttf");
+  src: url("/static/fonts/aqum.eot?#iefix") format("embedded-opentype"), url("/static/fonts/aqum.woff2") format("woff2"), url("/static/fonts/aqum.woff") format("woff"), url("/static/fonts/aqum.ttf") format("truetype"), url("/static/fonts/aqum.svg#aqum") format("svg");
+}
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/static/fonts/OpenRunde-Regular.woff2") format("woff2"), url("/static/fonts/OpenRunde-Regular.woff") format("woff");
+}
 .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
   --bs-gutter-x: 1.875rem;
 }
@@ -11906,7 +11915,7 @@ button {
 /* обнуление стилей закончено*/
 /* настройка основных стилей */
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: OpenRunde, serif;
   font-size: 20px;
   line-height: 1.32;
   color: #000;
@@ -11927,6 +11936,7 @@ pre {
 
 h1, .h1 {
   font-size: 50px;
+  font-family: Aqum, sans-serif;
   font-weight: 700;
 }
 @media screen and (max-width: 1440px) {
@@ -11942,7 +11952,8 @@ h1, .h1 {
 
 h2, .h2 {
   font-weight: 700;
-  font-size: 32px;
+  font-size: 36px;
+  font-family: Aqum, sans-serif;
 }
 @media screen and (max-width: 1440px) {
   h2, .h2 {
