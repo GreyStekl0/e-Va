@@ -1,6 +1,7 @@
 .provide {
   padding-top: 72px;
 
+
   .provide__title {
     display: flex;
     justify-content: center;
@@ -8,6 +9,9 @@
 
   .provide__blocks {
     padding-top: 39px;
+    @media screen and (max-width: $sm) {
+      padding-top: 0;
+    }
 
 
     .provide__item {
@@ -19,7 +23,7 @@
       border-radius: 20px;
       box-shadow: 0 10px 50px $secondary;
       @media screen and (max-width: $sm) {
-        margin-top: 45px;
+        margin-top: 25px;
         height: 250px;
       }
 

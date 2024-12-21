@@ -2,6 +2,7 @@
   background-color: $secondary;
   @media screen and (max-width: $sm) {
     border-radius: 20px;
+    padding-bottom: 20px;
   }
 
   p, h3 {
@@ -30,6 +31,7 @@
       padding-bottom: 49px;
       @media screen and (max-width: $sm) {
         justify-content: left;
+        padding-bottom: 25px;
       }
 
       .team__item-text {

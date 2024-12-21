@@ -12,7 +12,7 @@
   .functions__cards {
     padding-top: 39px;
     @media screen and (max-width: $sm) {
-      padding-top: 15px;
+      padding-top: 0;
     }
 
     .functions__cards-primary {
@@ -27,6 +27,9 @@
 
     .functions__Card {
       margin-top: 39px;
+      @media screen and (max-width: $sm) {
+        margin-top: 29px;
+      }
       height: 320px;
       width: 100%;
       border-radius: 20px;

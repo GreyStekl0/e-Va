@@ -1,6 +1,10 @@
-.order{
+.order {
   padding-top: 130px;
-  .order__title{
+  @media screen and (max-width: $sm) {
+    padding-top: 60px;
+  }
+
+  .order__title {
     text-align: center;
   }
 }
