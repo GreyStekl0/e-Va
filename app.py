@@ -9,6 +9,7 @@ app = Flask(__name__)
 BOT_TOKEN = bot_token
 CHAT_ID = chat_id
 
+
 # Helper function to send messages to Telegram
 def send_to_telegram(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -27,7 +28,6 @@ def send_to_telegram(message):
     except requests.exceptions.RequestException as e:
         print(f"Error during Telegram API request: {e}")
         return False
-
 
 
 @app.route('/')
@@ -78,6 +78,5 @@ def order():
         return jsonify({"error": "An internal error occurred."}), 500
 
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=80)
