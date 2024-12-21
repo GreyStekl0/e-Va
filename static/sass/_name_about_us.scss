@@ -1,4 +1,7 @@
-.name{
+.name {
   padding-top: 75px;
+  @media screen and (max-width: $sm) {
+    padding-top: 50px;
+  }
   margin-bottom: 38px;
 }

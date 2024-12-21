@@ -2,7 +2,7 @@
 @import "sass/font";
 @import "sass/variables";
 @import "sass/base";
-@import "sass/navigation_constructor";
+@import "sass/navigation";
 @import "sass/order_constructor";
 @import "sass/footer";
 
@@ -40,6 +40,9 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  @media screen and (max-width: $sm) {
+    justify-content: left;
+  }
 }
 
 .add-img {
@@ -52,6 +55,9 @@ input[type="text"] {
   display: flex;
   justify-content: space-between;
   margin-top: 35px;
+  @media screen and (max-width: $sm) {
+    flex-direction: column;
+  }
 }
 
 .button-wrapper input[type="submit"],
@@ -62,6 +68,9 @@ input[type="text"] {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+    @media screen and (max-width: $sm) {
+    margin-top: 10px;
+  }
 }
 
 .button-wrapper input[type="submit"]:disabled,

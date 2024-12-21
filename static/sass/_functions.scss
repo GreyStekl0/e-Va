@@ -1,5 +1,8 @@
 .functions {
   padding-top: 100px;
+  @media screen and (max-width: $sm) {
+    padding-top: 60px;
+  }
 
   .functions__title {
     display: flex;
@@ -8,6 +11,9 @@
 
   .functions__cards {
     padding-top: 39px;
+    @media screen and (max-width: $sm) {
+      padding-top: 15px;
+    }
 
     .functions__cards-primary {
       background-color: $primary;
@@ -30,11 +36,13 @@
         display: flex;
         justify-content: center;
       }
-      .functions__Card-title{
+
+      .functions__Card-title {
         padding-top: 26px;
         text-align: center;
         font-weight: 600;
       }
+
       .functions__Card-text {
         padding-top: 12px;
         text-align: center;

@@ -1,16 +1,30 @@
 .order {
   padding-top: 115px;
+  @media screen and (max-width: $sm) {
+    padding-top: 70px;
+  }
 
   .order__wrap {
     display: flex;
     justify-content: center;
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+    }
 
     .order__title {
       text-align: right;
+      @media screen and (max-width: $sm) {
+        text-align: left;
+        padding-bottom: 15px;
+      }
+
     }
 
     .order__form {
       padding-left: 34px;
+      @media screen and (max-width: $sm) {
+          padding-left: 0;
+        }
 
       select, input {
         color: #000;
@@ -29,22 +43,33 @@
         display: block; /* Make select element take full width */
         width: 100%;
         margin-bottom: 13px;
+        @media screen and (max-width: $sm) {
+          margin-bottom: 0;
+        }
       }
 
       input {
         display: inline-block; /* Keep input elements on the same line */
         width: auto; /* Adjust width as needed */
+        @media screen and (max-width: $sm) {
+          width: 100%;
+          margin-top: 8px;
+        }
       }
 
-      p{
+      p {
         padding-top: 15px;
       }
-      button{
+
+      button {
         margin-top: 31px;
         margin-bottom: 9px;
         padding: 12px 48px;
         border-radius: 10px;
         background-color: $primary;
+        @media screen and (max-width: $sm) {
+          width: 100%;
+        }
       }
     }
   }

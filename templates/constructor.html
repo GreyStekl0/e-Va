@@ -83,6 +83,17 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const closeBtn = document.getElementById('close-btn');
+
+            hamburger.addEventListener('click', function () {
+                sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+            });
+
+            closeBtn.addEventListener('click', function () {
+                sidebar.style.display = 'none';
+            });
             addAddButton();
             checkAddButtonVisibility();
             checkInput(); // Initial check to disable the button if all fields are empty
@@ -106,10 +117,11 @@
     <nav class="navigation">
         <div class="container">
             <div class="navigation__wrapp">
-                <img src="/static/image/logo.svg" alt="logo">
-                <ul class="navigation__list">
+                <img src="../static/image/logo.svg" alt="logo">
+                <img src="../static/image/hamburger.svg" alt="hamburger" class="hamburger" id="hamburger">
+                <ul class="navigation__list" id="navigation-list">
                     <li class="navigation__list-item">
-                        <a href="/" class="navigation__list-link"> Открытка </a>
+                        <a href="#" class="navigation__list-link"> Открытка </a>
                     </li>
                     <li class="navigation__list-item-act">
                         <a href="/constructor" class="navigation__list-link"> Конструктор </a>
@@ -119,6 +131,24 @@
                     </li>
                 </ul>
             </div>
+            <div class="sidebar" id="sidebar">
+                <img src="../static/image/escape.svg" alt="close" class="close-btn" id="close-btn">
+                <ul class="sidebar__list">
+                    <li class="sidebar__list-item">
+                        <a href="/" class="sidebar__list-link"> Открытка </a>
+                    </li>
+                    <li class="sidebar__list-item-act">
+                        <a href="/constructor" class="sidebar__list-link"> Конструктор </a>
+                    </li>
+                    <li class="sidebar__list-item">
+                        <a href="/about_us" class="sidebar__list-link"> О нас </a>
+                    </li>
+                </ul>
+                {#                <div class="sidebar__footer">#}
+                {#                    <img src="../static/image/name.svg" alt="name">#}
+                {#                    <p>Hedgehogs © 2023</p>#}
+                {#                </div>#}
+            </div>
         </div>
     </nav>
 </header>
@@ -126,7 +156,7 @@
     <div class="order">
         <div class="container">
             <div class="row">
-                <div class="offset-2 col-8 offset-2">
+                <div class="offset-md-2 col-md-8 offset-md-2">
                     <div class="order__wrapp">
                         <h1 class="order__title">СОЗДАЙ СВОИ ПОСЛАНИЯ!</h1>
                         <div class="constructor-container">

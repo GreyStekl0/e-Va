@@ -1,22 +1,38 @@
 .team {
   background-color: $secondary;
+  @media screen and (max-width: $sm) {
+    border-radius: 20px;
+  }
+
+  p, h3 {
+    font-size: 20px;
+  }
 
   .team__title {
     padding-top: 49px;
+    @media screen and (max-width: $sm) {
+      text-align: center;
+    }
   }
 
   .team__wrapp {
     padding-top: 22px;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+    }
 
     .team__item {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-bottom: 49px;
+      @media screen and (max-width: $sm) {
+        justify-content: left;
+      }
 
-      .team__item-text{
+      .team__item-text {
         padding-left: 10px;
       }
     }

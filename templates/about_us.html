@@ -11,10 +11,11 @@
     <nav class="navigation">
         <div class="container">
             <div class="navigation__wrapp">
-                <img src="/static/image/logo.svg" alt="logo">
-                <ul class="navigation__list">
+                <img src="../static/image/logo.svg" alt="logo">
+                <img src="../static/image/hamburger.svg" alt="hamburger" class="hamburger" id="hamburger">
+                <ul class="navigation__list" id="navigation-list">
                     <li class="navigation__list-item">
-                        <a href="/" class="navigation__list-link"> Открытка </a>
+                        <a href="#" class="navigation__list-link"> Открытка </a>
                     </li>
                     <li class="navigation__list-item">
                         <a href="/constructor" class="navigation__list-link"> Конструктор </a>
@@ -23,6 +24,24 @@
                         <a href="/about_us" class="navigation__list-link"> О нас </a>
                     </li>
                 </ul>
+            </div>
+            <div class="sidebar" id="sidebar">
+                <img src="../static/image/escape.svg" alt="close" class="close-btn" id="close-btn">
+                <ul class="sidebar__list">
+                    <li class="sidebar__list-item">
+                        <a href="/" class="sidebar__list-link"> Открытка </a>
+                    </li>
+                    <li class="sidebar__list-item">
+                        <a href="/constructor" class="sidebar__list-link"> Конструктор </a>
+                    </li>
+                    <li class="sidebar__list-item-act">
+                        <a href="/about_us" class="sidebar__list-link"> О нас </a>
+                    </li>
+                </ul>
+{#                <div class="sidebar__footer">#}
+{#                    <img src="../static/image/name.svg" alt="name">#}
+{#                    <p>Hedgehogs © 2023</p>#}
+{#                </div>#}
             </div>
         </div>
     </nav>
@@ -40,22 +59,21 @@
             <h2 class="team__title">Наша команда</h2>
             <div class="team__wrapp">
                 <div class="team__item">
-                    <img src="/static/image/photo.svg" alt="photo">
+                    <img src="/static/image/kirill.png" alt="photo">
                     <div class="team__item-text">
                         <h3 class="team__name">Шильников Кирилл</h3>
                         <p class="team__prof">Backend-разработчик</p>
                     </div>
                 </div>
                 <div class="team__item">
-                    <img src="/static/image/photo.svg" alt="photo">
+                    <img src="/static/image/sergey.png" alt="photo">
                     <div class="team__item-text">
                         <h3 class="team__name">Гульев Сергей</h3>
                         <p class="team__prof">Frontend-разработчик</p>
                     </div>
-
                 </div>
                 <div class="team__item">
-                    <img src="/static/image/photo.svg" alt="photo">
+                    <img src="/static/image/maria.png" alt="photo">
                     <div class="team__item-text">
                         <h3 class="team__name">Гущина Мария</h3>
                         <p class="team__prof">UX/UI-дизайнер</p>
@@ -64,45 +82,45 @@
             </div>
         </div>
     </section>
-    <section class="provide">
-        <div class="container">
-            <h2 class="provide__title">МЫ ПРЕДСТАВЛЯЕМ</h2>
-            <div class="row">
-                <div class="offset-1 col-10 offset-1">
-                    <div class="provide__blocks">
-                        <div class="provide__item">
-                            <img src="/static/image/star.svg" alt="star">
-                            <p class="provide__text">Разработку<br>
-                                инновационных решений</p>
-                        </div>
-                        <div class="provide__item">
-                            <img src="/static/image/calendar.svg" alt="calendar">
-                            <p class="provide__text">Высокую эффективность<br>
-                                работы даже при<br>
-                                сжатых сроках</p>
-                        </div>
-                        <div class="provide__item">
-                            <img src="/static/image/smile.svg" alt="smile">
-                            <p class="provide__text">Гарантию качества<br>
-                                и постоянное улучшение<br>
-                                наших услуг</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="provide__projects">
-                <h2 class="provide__projects-title">НАШИ ПРОЕКТЫ</h2>
-                <a href="https://t.me/createyourmem_bot">
-                    <div class="provide__projects-block">
-
-                        <h2>MEMCREATOR</h2>
-                        <h3>бот по созданию мемов</h3>
-
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+{#    <section class="provide">#}
+{#        <div class="container">#}
+{#            <h2 class="provide__title">МЫ ПРЕДСТАВЛЯЕМ</h2>#}
+{#            <div class="row">#}
+{#                <div class="offset-1 col-10 offset-1">#}
+{#                    <div class="provide__blocks">#}
+{#                        <div class="provide__item">#}
+{#                            <img src="/static/image/star.svg" alt="star">#}
+{#                            <p class="provide__text">Разработку<br>#}
+{#                                инновационных решений</p>#}
+{#                        </div>#}
+{#                        <div class="provide__item">#}
+{#                            <img src="/static/image/calendar.svg" alt="calendar">#}
+{#                            <p class="provide__text">Высокую эффективность<br>#}
+{#                                работы даже при<br>#}
+{#                                сжатых сроках</p>#}
+{#                        </div>#}
+{#                        <div class="provide__item">#}
+{#                            <img src="/static/image/smile.svg" alt="smile">#}
+{#                            <p class="provide__text">Гарантию качества<br>#}
+{#                                и постоянное улучшение<br>#}
+{#                                наших услуг</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="provide__projects">#}
+{#                <h2 class="provide__projects-title">НАШИ ПРОЕКТЫ</h2>#}
+{#                <a href="https://t.me/createyourmem_bot">#}
+{#                    <div class="provide__projects-block">#}
+{##}
+{#                        <h2>MEMCREATOR</h2>#}
+{#                        <h3>бот по созданию мемов</h3>#}
+{##}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
 </main>
 <footer>
     <div class="container">
@@ -112,5 +130,20 @@
         </div>
     </div>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        hamburger.addEventListener('click', function () {
+            sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+        });
+
+        closeBtn.addEventListener('click', function () {
+            sidebar.style.display = 'none';
+        });
+    });
+</script>
 </body>
 </html>
