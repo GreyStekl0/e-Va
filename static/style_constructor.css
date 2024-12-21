@@ -12616,6 +12616,9 @@ input[type=text] {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-family: OpenRunde, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
 }
 @media screen and (max-width: 576px) {
   .button-wrapper input[type=submit],

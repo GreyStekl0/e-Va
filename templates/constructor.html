@@ -40,14 +40,14 @@
             newInput.type = 'text';
             newInput.name = 'text';
             newInput.value = value;
-            newInput.maxLength = 40; // Set the maximum length to 40 characters
+            newInput.maxLength = 40;
             newInput.addEventListener('input', checkInput);
 
             container.appendChild(newInput);
 
             if (removable) {
                 const removeImg = document.createElement('img');
-                removeImg.src = '/static/image/remove.svg'; // Path to your remove image
+                removeImg.src = '/static/image/remove.svg';
                 removeImg.alt = 'Remove';
                 removeImg.classList.add('remove-img');
                 removeImg.addEventListener('click', function () {
@@ -71,7 +71,7 @@
             addButtonContainer.classList.add('add-button-container');
 
             const addImg = document.createElement('img');
-            addImg.src = '/static/image/add.svg'; // Path to your add image
+            addImg.src = '/static/image/add.svg';
             addImg.alt = 'Add';
             addImg.classList.add('add-img');
             addImg.addEventListener('click', function () {
@@ -96,7 +96,7 @@
             });
             addAddButton();
             checkAddButtonVisibility();
-            checkInput(); // Initial check to disable the button if all fields are empty
+            checkInput();
         });
 
         function uploadFile(event) {

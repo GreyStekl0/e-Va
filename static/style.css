@@ -12565,6 +12565,11 @@ nav {
   padding-top: 38px;
   padding-left: 24px;
 }
+@media screen and (max-width: 576px) {
+  .what\? .what__wrapp .what__wrapp-text {
+    padding-left: 0;
+  }
+}
 .what\? .what__wrapp .what__wrapp-text .what__text {
   padding-top: 20px;
 }
@@ -12695,6 +12700,11 @@ nav {
 }
 .order .order__wrap .order__form p {
   padding-top: 15px;
+}
+@media screen and (max-width: 576px) {
+  .order .order__wrap .order__form p {
+    font-size: 10px;
+  }
 }
 .order .order__wrap .order__form button {
   margin-top: 31px;
