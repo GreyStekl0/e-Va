@@ -12590,8 +12590,6 @@ nav {
   justify-content: center;
 }
 .provide .provide__blocks {
-  display: flex;
-  justify-content: space-between;
   padding-top: 39px;
 }
 .provide .provide__blocks .provide__item {
@@ -12599,9 +12597,15 @@ nav {
   flex-direction: column;
   align-items: center;
   height: 320px;
-  width: 282px;
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 10px 50px #EDC2C9;
+}
+@media screen and (max-width: 576px) {
+  .provide .provide__blocks .provide__item {
+    margin-top: 45px;
+    height: 250px;
+  }
 }
 .provide .provide__blocks .provide__item img {
   padding-top: 62px;

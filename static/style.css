@@ -12532,6 +12532,11 @@ nav {
   padding-top: 45px;
   margin: 36px 0;
 }
+@media screen and (max-width: 768px) {
+  .name {
+    padding-top: 0;
+  }
+}
 .name .name__title {
   padding-top: 8px;
 }
@@ -12595,7 +12600,7 @@ nav {
 .functions .functions__cards .functions__Card {
   margin-top: 39px;
   height: 320px;
-  width: 282px;
+  width: 100%;
   border-radius: 20px;
 }
 .functions .functions__cards .functions__Card .functions__Card-img-wrap {
@@ -12608,9 +12613,19 @@ nav {
   text-align: center;
   font-weight: 600;
 }
+@media screen and (max-width: 576px) {
+  .functions .functions__cards .functions__Card .functions__Card-title {
+    font-size: 25px;
+  }
+}
 .functions .functions__cards .functions__Card .functions__Card-text {
   padding-top: 12px;
   text-align: center;
+}
+@media screen and (max-width: 576px) {
+  .functions .functions__cards .functions__Card .functions__Card-text {
+    font-size: 20px;
+  }
 }
 
 .order {

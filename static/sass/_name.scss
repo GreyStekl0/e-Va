@@ -1,6 +1,9 @@
 .name{
   padding-top: 45px;
   margin: 36px 0;
+    @media screen and (max-width: 768px) {
+        padding-top: 0;
+    }
 
   .name__title{
     padding-top: 8px;

@@ -28,7 +28,7 @@
     .functions__Card {
       margin-top: 39px;
       height: 320px;
-      width: 282px;
+      width: 100%;
       border-radius: 20px;
 
       .functions__Card-img-wrap {
@@ -41,11 +41,17 @@
         padding-top: 26px;
         text-align: center;
         font-weight: 600;
+        @media screen and (max-width: $sm) {
+          font-size: 25px;
+        }
       }
 
       .functions__Card-text {
         padding-top: 12px;
         text-align: center;
+        @media screen and (max-width: $sm) {
+          font-size: 20px;
+        }
       }
     }
   }
