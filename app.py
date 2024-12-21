@@ -1,6 +1,7 @@
-from flask import Flask, request, render_template, jsonify
-import requests
+from flask import Flask, request, render_template, jsonify, request, send_file, render_template
 
+import requests
+import io
 from config import bot_token, chat_id
 
 app = Flask(__name__)
@@ -45,37 +46,18 @@ def about_us():
     return render_template('about_us.html')
 
 
-@app.route('/order', methods=['POST'])
-def order():
-    try:
-        # Extract data from form
-        design = request.form.get('design')
-        name = request.form.get('name')
-        phone = request.form.get('phone')
-        email = request.form.get('email')
-
-        # Validate form data
-        if not all([design, name, phone, email]):
-            return jsonify({"error": "All fields are required."}), 400
-
-        # Format message for Telegram
-        message = (
-            f"Новый заказ:\n"
-            f"Дизайн: {design}\n"
-            f"Имя: {name}\n"
-            f"Телефон: {phone}\n"
-            f"Email: {email}"
-        )
-
-        # Send message to Telegram
-        if not send_to_telegram(message):
-            return jsonify({"error": "Failed to send message to Telegram."}), 500
-
-        return jsonify({"success": True}), 200
-
-    except Exception as e:
-        print(f"Error processing order: {e}")
-        return jsonify({"error": "An internal error occurred."}), 500
+@app.route('/download', methods=['POST'])
+def download():
+    texts = request.form.getlist('text')
+    combined_text = f"<{'\n'.join(texts)}\n>"
+    print(combined_text)
+    binary_data = combined_text.encode('utf-8')
+    return send_file(
+        io.BytesIO(binary_data),
+        as_attachment=True,
+        download_name='e-va_card.bin',
+        mimetype='application/octet-stream'
+    )
 
 
 if __name__ == '__main__':
