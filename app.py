@@ -49,7 +49,7 @@ def about_us():
 @app.route('/download', methods=['POST'])
 def download():
     texts = request.form.getlist('text')
-    combined_text = f"<{'\n'.join(texts)}\n>"
+    combined_text = "<" + '\n'.join(texts) + "\n>"
     print(combined_text)
     binary_data = combined_text.encode('utf-8')
     return send_file(
