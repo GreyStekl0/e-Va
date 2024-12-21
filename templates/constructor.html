@@ -9,7 +9,7 @@
         function checkInput() {
             const inputs = document.querySelectorAll('input[name="text"]');
             const button = document.querySelector('input[type="submit"]');
-            button.disabled = inputs.length === 0 || Array.from(inputs).some(input => input.value.trim() === '');
+            button.disabled = inputs.length === 1 || Array.from(inputs).some(input => input.value.trim() === '');
         }
 
 
